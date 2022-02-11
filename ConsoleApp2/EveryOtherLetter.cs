@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace EveryOtherLetter
+﻿namespace EveryOtherLetter
 {
     class EveryOtherLetter
     {
@@ -29,13 +27,18 @@ namespace EveryOtherLetter
             }
             while (body == null || lengthOfString <= 0);
 
-                Console.WriteLine($"Every other letter, starting with {body[0]}, capitalized: \n");
+            Console.WriteLine($"Every other letter, starting with {body[0]}, capitalized: \n");
+
             do
             {
                 string startOfString = Convert.ToString(body[i]);
                 if (i % 2 == 0)
                 {
                     startOfString = startOfString.ToUpper();
+                }
+                else if (i % 2 == 1)
+                {
+                    startOfString = startOfString.ToLower();
                 }
                 Console.Write(startOfString);
                 i++;
