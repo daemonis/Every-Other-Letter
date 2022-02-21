@@ -10,12 +10,8 @@
             body = Console.ReadLine();
             lengthOfString = body.Length;
         }
-
-        static void Main(string[] args)
+        static void ValidateBody()
         {
-            Console.Write("Enter a word or phrase to make every other letter uppercase: ");
-            int i = 0;
-
             do
             {
                 GetString();
@@ -26,8 +22,10 @@
                 }
             }
             while (body == null || lengthOfString <= 0);
-
-            Console.WriteLine($"Every other letter, starting with {body[0]}, capitalized: \n");
+        }
+        static void MakeSarcastic()
+        {
+            int i = 0;
 
             do
             {
@@ -44,6 +42,16 @@
                 i++;
             }
             while (i < lengthOfString);
+        }
+        static void Main(string[] args)
+        {
+            Console.Write("Enter a word or phrase to make every other letter uppercase: ");
+
+            ValidateBody();
+
+            Console.WriteLine($"Every other letter, starting with {body[0]}, capitalized: \n");
+
+            MakeSarcastic();
         }
     }
 }
